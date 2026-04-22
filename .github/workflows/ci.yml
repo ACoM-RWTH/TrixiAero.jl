@@ -40,3 +40,7 @@ jobs:
         with:
           files: ./lcov.info
           fail_ci_if_error: false
+      - uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./lcov.info
