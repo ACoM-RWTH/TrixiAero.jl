@@ -3,4 +3,4 @@
 [![CI](https://github.com/ACoM-RWTH/TrixiAero.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/ACoM-RWTH/TrixiAero.jl/actions/workflows/ci.yml)
 [![Aqua QA](https://raw.githubusercontent.com/JuliaTesting/Aqua.jl/master/badge.svg)](https://github.com/JuliaTesting/Aqua.jl)
 
-High-fidelity Aerodynamic Simulations with Trixi.jl
+High-fidelity Aerodynamic Simulations with [Trixi.jl](https://github.com/trixi-framework/Trixi.jl)
