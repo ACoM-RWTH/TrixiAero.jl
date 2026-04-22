@@ -36,10 +36,30 @@ jobs:
       - uses: julia-actions/julia-processcoverage@v1
         with:
           directories: src
+      - uses: actions/upload-artifact@v7
+        with:
+          name: lcov
+          path: ./lcov.info
+
+  codecov:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: lcov
       - uses: codecov/codecov-action@v6
         with:
           files: ./lcov.info
           fail_ci_if_error: false
+
+  coveralls:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: lcov
       - uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
