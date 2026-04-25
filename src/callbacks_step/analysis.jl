@@ -101,6 +101,12 @@ function Base.show(io::IO, ::MIME"text/plain",
     end
 end
 
+# This is the convenience constructor that gets called from the elixirs
+function AnalysisCallback(semi::AbstractSemidiscretization; kwargs...)
+    mesh, equations, solver, cache = mesh_equations_solver_cache(semi)
+    return AnalysisCallback(mesh, equations, solver, cache; kwargs...)
+end
+
 # This is the actual constructor
 function AnalysisCallback(mesh, equations::AbstractEquations, solver, cache;
                           interval = 0,
