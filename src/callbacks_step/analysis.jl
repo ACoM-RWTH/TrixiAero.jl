@@ -325,7 +325,6 @@ function analyze(quantity, du, u, t, semi::AbstractSemidiscretization, iter)
     mesh, equations, solver, cache = mesh_equations_solver_cache(semi)
     analyze(quantity, du, u, t, mesh, equations, solver, cache, iter)
 end
-
 end # @muladd
 
 # specialized implementations specific to some solvers

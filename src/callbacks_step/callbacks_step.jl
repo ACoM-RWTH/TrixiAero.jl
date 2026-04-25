@@ -6,5 +6,4 @@
 #! format: noindent
 
 include("analysis.jl")
-
 end # @muladd

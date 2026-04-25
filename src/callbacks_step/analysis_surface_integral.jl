@@ -8,5 +8,4 @@
 # Abstract base type used for dispatch of `analyze` for quantities
 # requiring gradients of the velocity field.
 abstract type VariableViscous end
-
 end # muladd
