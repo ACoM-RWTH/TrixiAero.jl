@@ -1,5 +1,7 @@
 using Test
 using Aqua
+
+using Trixi
 using TrixiAero
 
 @testset "TrixiAero" begin
