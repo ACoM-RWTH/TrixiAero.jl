@@ -3,7 +3,7 @@ using Aqua
 using TrixiAero
 
 @testset "TrixiAero" begin
-    @test true
+    include(joinpath(@__DIR__, "test_p4est.jl"))
 end
 
 @testset "Aqua" begin

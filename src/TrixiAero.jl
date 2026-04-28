@@ -20,7 +20,7 @@ using Trixi: @printf, @sprintf, print_level_information,
              get_name, attributes,
              get_boundary_indices, get_node_coords,
              index_to_start_step_2d, index_to_start_step_3d,
-             analyze_integrals,
+             analyze_integrals, calc_error_norms,
              h5open
 
 # import (not using!) functions you want to extend
@@ -30,9 +30,12 @@ import Trixi: pretty_form_ascii, pretty_form_utf,
 using MuladdMacro: @muladd
 using StaticArrays: SVector, SMatrix, SArray, MVector, MArray
 
+include("auxiliary.jl")
+
 include("callbacks_step/callbacks_step.jl")
 
 export AnalysisSurfacePointwise, SurfacePressureCoefficient, SurfaceFrictionCoefficient,
-       AnalysisCallback
+       AnalysisCallback,
+       examples_dir
 
 end
