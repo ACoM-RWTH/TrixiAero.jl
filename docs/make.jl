@@ -17,7 +17,10 @@ makedocs(modules = [TrixiAero],
          pages = [
              "Home" => "index.md",
              "API Reference" => "api.md"
-         ])
+         ],
+         doctest = true,
+         linkcheck = false,
+         warnonly = [:missing_docs])
 
 # Deploy documentation
 deploydocs(repo = "github.com/ACoM-RWTH/TrixiAero.jl.git",
