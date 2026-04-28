@@ -11,7 +11,6 @@ It extends Trixi's capabilities with specialized analysis callbacks and surface 
 
 ## Installation
 
-TODO: Register
 TrixiAero.jl is registered in the Julia General Registry. Install it using:
 
 ```julia
