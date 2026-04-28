@@ -1,5 +1,4 @@
 using Documenter
-using Trixi
 using TrixiAero
 
 # Set up for local builds
