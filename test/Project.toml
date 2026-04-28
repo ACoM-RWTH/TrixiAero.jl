@@ -1,11 +1,13 @@
 [deps]
 Aqua = "4c88cf16-eb10-579e-8560-4a9242c79595"
+OrdinaryDiffEqSSPRK = "669c94d9-1f4b-4b64-b377-1aa079aa2388"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 Trixi = "a7f1ee26-1774-49b1-8366-f1abc58fbfcb"
 TrixiTest = "0a316866-cbd0-4425-8bcb-08103b2c1f26"
 
 [compat]
 Aqua = "0.8"
+OrdinaryDiffEqSSPRK = "1.2"
 Test = "1"
 Trixi = "0.16"
 TrixiTest = "0.2.1"
