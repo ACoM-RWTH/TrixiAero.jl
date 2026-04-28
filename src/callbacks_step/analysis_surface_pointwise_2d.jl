@@ -135,8 +135,8 @@ function analyze(surface_variable::AnalysisSurfacePointwise{Variable},
     values = Vector{real(dg)}(undef, n_boundary_elements * n_nodes)
 
     # Additions for parabolic
-    @unpack viscous_container = cache_parabolic
-    @unpack gradients = viscous_container
+    @unpack parabolic_container = cache_parabolic
+    @unpack gradients = parabolic_container
 
     gradients_x, gradients_y = gradients
 

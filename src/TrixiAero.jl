@@ -18,17 +18,23 @@ using Trixi: @printf, @sprintf, print_level_information,
              mpi_isroot, mpi_nranks, mpi_println,
              ndofsglobal, ndofs, nelementsglobal, nelements,
              get_name, attributes,
-             get_boundary_indices, get_node_coords,
+             get_boundary_indices, get_node_coords, get_normal_direction,
+             indices2direction,
+             prolong2boundaries!,
              index_to_start_step_2d, index_to_start_step_3d,
              analyze_integrals, calc_error_norms,
-             h5open
+             h5open,
+             convert_derivative_to_primitive,
+             viscous_stress_tensor
 
 # import (not using!) functions you want to extend
 import Trixi: pretty_form_ascii, pretty_form_utf,
-              initialize!
+              initialize!,
+              viscous_stress_tensor # 3D version not in main Trixi.jl
 
 using MuladdMacro: @muladd
 using StaticArrays: SVector, SMatrix, SArray, MVector, MArray
+using LinearAlgebra: norm
 
 include("auxiliary.jl")
 
