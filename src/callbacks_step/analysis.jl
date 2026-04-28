@@ -22,7 +22,7 @@ Additional errors can be computed, e.g. by passing
 `extra_analysis_errors = (:l2_error_primitive, :linf_error_primitive)`
 or `extra_analysis_errors = (:conservation_error,)`.
 
-If you want to omit the computation (to safe compute-time) of the [`default_analysis_errors`](@ref), specify
+If you want to omit the computation (to safe compute-time) of the `default_analysis_errors`, specify
 `analysis_errors = Symbol[]`.
 Note: `default_analysis_errors` are `:l2_error` and `:linf_error` for all equations.
 If you want to compute `extra_analysis_errors` such as `:conservation_error` solely, i.e.,
@@ -31,17 +31,17 @@ without `:l2_error, :linf_error` you need to specify
 
 Further scalar functions `func` in `extra_analysis_integrals` are applied to the numerical
 solution and integrated over the computational domain. Some examples for this are
-[`entropy`](@ref), [`energy_kinetic`](@ref), [`energy_internal`](@ref), and [`energy_total`](@ref).
+`entropy`, `energy_kinetic`, `energy_internal`, and `energy_total`.
 You can also write your own function with the same signature as the examples listed above and
 pass it via `extra_analysis_integrals`.
 The default `analysis_integrals` is `(entropy_timederivative,)`.
-You can also request `extra_analysis_integrals` such as [`LiftCoefficientPressure`](@ref) or
-[`DragCoefficientPressure`](@ref) by constructing an [`AnalysisSurfaceIntegral`](@ref) with one of 
+You can also request `extra_analysis_integrals` such as `LiftCoefficientPressure` or
+`DragCoefficientPressure` by constructing an `AnalysisSurfaceIntegral` with one of 
 the previously mentioned functions.
 
 Similarly, pointwise, i.e., per quadrature/interpolation point, quantities such at
-[`SurfacePressureCoefficient`](@ref) or [`SurfaceFrictionCoefficient`](@ref) can be computed.
-Instances of these need to be passed into [`AnalysisSurfacePointwise`](@ref) which is then in turn
+`SurfacePressureCoefficient` or `SurfaceFrictionCoefficient` can be computed.
+Instances of these need to be passed into `AnalysisSurfacePointwise` which is then in turn
 passed to `analysis_pointwise`.
 
 See the developer comments about `Trixi.analyze`, `Trixi.pretty_form_utf`, and

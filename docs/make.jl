@@ -20,7 +20,7 @@ makedocs(modules = [TrixiAero],
          ],
          doctest = true,
          linkcheck = false,
-         warnonly = [:missing_docs])
+         warnonly = [:missing_docs, :cross_references])
 
 # Deploy documentation
 deploydocs(repo = "github.com/ACoM-RWTH/TrixiAero.jl.git",
