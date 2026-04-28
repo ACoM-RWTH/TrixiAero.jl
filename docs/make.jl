@@ -25,4 +25,6 @@ makedocs(modules = [TrixiAero],
 # Deploy documentation
 deploydocs(repo = "github.com/ACoM-RWTH/TrixiAero.jl.git",
            devbranch = "main",
+           devurl = "dev",
+           versions = ["stable" => "v^", "dev" => "dev"],
            push_preview = true)
