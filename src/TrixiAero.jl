@@ -11,7 +11,7 @@ using Trixi: @printf, @sprintf, print_level_information,
              @trixi_timeit, @notimeit, timer,
              DiscreteCallback, SolutionAnalyzer,
              create_cache_analysis, summary_box, ncalls,
-             AbstractEquations, AbstractSemidiscretization,
+             AbstractEquations, AbstractEquationsParabolic, AbstractSemidiscretization,
              mesh_equations_solver_cache, get_tmp_cache,
              wrap_array,
              u_modified!, isfinished,
@@ -27,7 +27,7 @@ using Trixi: @printf, @sprintf, print_level_information,
              convert_derivative_to_primitive,
              viscous_stress_tensor
 
-# import (not using!) functions you want to extend
+# import (not using!) functions that are extended
 import Trixi: pretty_form_ascii, pretty_form_utf,
               initialize!,
               viscous_stress_tensor # 3D version not in main Trixi.jl
