@@ -24,8 +24,7 @@ using Trixi: @printf, @sprintf, print_level_information,
              index_to_start_step_2d, index_to_start_step_3d,
              analyze_integrals, calc_error_norms,
              h5open,
-             convert_derivative_to_primitive,
-             viscous_stress_tensor
+             convert_derivative_to_primitive
 
 # import (not using!) functions that are extended
 import Trixi: pretty_form_ascii, pretty_form_utf,
