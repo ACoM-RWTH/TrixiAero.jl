@@ -13,7 +13,6 @@ In the future, we plan to add more features for nonideal and rarefied gases, for
 ## Features
 
 - **Surface pressure and friction coefficients**: Compute and save pointwise aerodynamic coefficients along boundaries
-- **Seamless Trixi.jl integration**: Built directly on Trixi's DG framework and mesh infrastructure
 
 ## Installation
 
