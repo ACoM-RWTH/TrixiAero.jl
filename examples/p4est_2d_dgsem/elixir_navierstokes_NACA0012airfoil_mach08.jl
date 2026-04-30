@@ -1,6 +1,6 @@
 using OrdinaryDiffEqLowStorageRK
 using Trixi
-using TrixiAero
+using AeroTrixi
 
 ###############################################################################
 # semidiscretization of the compressible Euler equations
@@ -145,7 +145,7 @@ lift_coefficient_shear_force = AnalysisSurfaceIntegral(force_boundary_names,
                                                                                     l_inf()))
 
 ###############################################################################
-# TrixiAero addition
+# AeroTrixi addition
 
 friction_coefficient = AnalysisSurfacePointwise(force_boundary_names,
                                                 SurfaceFrictionCoefficient(rho_inf(),
@@ -156,7 +156,7 @@ pressure_coefficient = AnalysisSurfacePointwise(force_boundary_names,
                                                                            rho_inf(),
                                                                            u_inf(equations)))
 
-analysis_callback = TrixiAero.AnalysisCallback(semi, interval = analysis_interval,
+analysis_callback = AeroTrixi.AnalysisCallback(semi, interval = analysis_interval,
                                                output_directory = "out",
                                                save_analysis = true,
                                                analysis_errors = Symbol[],

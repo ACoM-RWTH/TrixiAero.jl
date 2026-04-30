@@ -2,12 +2,12 @@ using Test
 using Aqua
 
 using Trixi
-using TrixiAero
+using AeroTrixi
 
-@testset "TrixiAero" begin
+@testset "AeroTrixi" begin
     include(joinpath(@__DIR__, "test_p4est.jl"))
 end
 
 @testset "Aqua" begin
-    Aqua.test_all(TrixiAero)
+    Aqua.test_all(AeroTrixi)
 end

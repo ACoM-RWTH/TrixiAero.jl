@@ -1,6 +1,6 @@
 # API Reference
 
 ```@autodocs
-Modules = [TrixiAero]
+Modules = [AeroTrixi]
 Order = [:type, :function]
 ```

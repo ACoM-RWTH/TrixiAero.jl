@@ -1,5 +1,5 @@
 using Documenter
-using TrixiAero
+using AeroTrixi
 
 # Set up for local builds
 if (get(ENV, "CI", nothing) != "true")
@@ -7,13 +7,13 @@ if (get(ENV, "CI", nothing) != "true")
 end
 
 # Define module-wide setups such that the respective modules are available in doctests
-DocMeta.setdocmeta!(TrixiAero, :DocTestSetup, :(using TrixiAero); recursive = true)
+DocMeta.setdocmeta!(AeroTrixi, :DocTestSetup, :(using AeroTrixi); recursive = true)
 
 # Make documentation
-makedocs(modules = [TrixiAero],
-         sitename = "TrixiAero.jl",
+makedocs(modules = [AeroTrixi],
+         sitename = "AeroTrixi.jl",
          format = Documenter.HTML(prettyurls = get(ENV, "CI", nothing) == "true",
-                                  canonical = "https://acom-rwth.github.io/TrixiAero.jl/stable"),
+                                  canonical = "https://acom-rwth.github.io/AeroTrixi.jl/stable"),
          pages = [
              "Home" => "index.md",
              "API Reference" => "api.md"
@@ -23,7 +23,7 @@ makedocs(modules = [TrixiAero],
          warnonly = [:missing_docs, :cross_references])
 
 # Deploy documentation
-deploydocs(repo = "github.com/ACoM-RWTH/TrixiAero.jl.git",
+deploydocs(repo = "github.com/ACoM-RWTH/AeroTrixi.jl.git",
            devbranch = "main",
            devurl = "dev",
            versions = ["stable" => "v^", "dev" => "dev"],

@@ -1,9 +1,9 @@
 """
-    TrixiAero
+    AeroTrixi
 
 High-fidelity aerodynamic simulations with Trixi.jl.
 """
-module TrixiAero
+module AeroTrixi
 
 using Trixi
 # using bunch of non-exported stuff from Trixi to avoid writing `Trixi.` everywhere

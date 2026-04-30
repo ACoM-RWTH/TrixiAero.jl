@@ -65,7 +65,7 @@ mutable struct AnalysisCallback{Analyzer, AnalysisIntegrals, AnalysisPointwise,
     const analyzer::Analyzer
     const analysis_errors::Vector{Symbol}
     const analysis_integrals::AnalysisIntegrals
-    const analysis_pointwise::AnalysisPointwise # TrixiAero addition
+    const analysis_pointwise::AnalysisPointwise # AeroTrixi addition
     initial_state_integrals::InitialStateIntegrals
     const cache::Cache
 end
@@ -87,7 +87,7 @@ function Base.show(io::IO, ::MIME"text/plain",
         for (idx, integral) in enumerate(analysis_callback.analysis_integrals)
             push!(setup, "│ integral " * string(idx) => integral)
         end
-        # TrixiAero addition
+        # AeroTrixi addition
         for (idx, quantity) in enumerate(analysis_callback.analysis_pointwise)
             push!(setup, "│ pointwise " * string(idx) => quantity)
         end
@@ -140,7 +140,7 @@ function AnalysisCallback(mesh, equations::AbstractEquations, solver, cache;
                                          analysis_filename,
                                          analyzer,
                                          analysis_errors, Tuple(analysis_integrals),
-                                         Tuple(analysis_pointwise), # TrixiAero addition
+                                         Tuple(analysis_pointwise), # AeroTrixi addition
                                          SVector(ntuple(_ -> zero(uEltype),
                                                         Val(nvariables(equations)))),
                                          cache_analysis)

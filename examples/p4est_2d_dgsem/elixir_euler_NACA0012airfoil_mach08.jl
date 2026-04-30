@@ -1,6 +1,6 @@
 using OrdinaryDiffEqSSPRK
 using Trixi
-using TrixiAero
+using AeroTrixi
 
 ###############################################################################
 # semidiscretization of the compressible Euler equations
@@ -87,7 +87,7 @@ lift_coefficient = AnalysisSurfaceIntegral(force_boundary_names,
                                                                      u_inf(), l_inf))
 
 ###############################################################################
-# TrixiAero addition
+# AeroTrixi addition
 
 pressure_coefficient = AnalysisSurfacePointwise(force_boundary_names,
                                                 SurfacePressureCoefficient(p_inf(),
@@ -95,7 +95,7 @@ pressure_coefficient = AnalysisSurfacePointwise(force_boundary_names,
                                                                            u_inf()))
 
 analysis_interval = 500_000 # Only at the end
-analysis_callback = TrixiAero.AnalysisCallback(semi, interval = analysis_interval,
+analysis_callback = AeroTrixi.AnalysisCallback(semi, interval = analysis_interval,
                                                output_directory = "out",
                                                analysis_errors = Symbol[],
                                                save_analysis = true,

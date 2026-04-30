@@ -1,8 +1,8 @@
 """
     examples_dir()
 
-Return the directory where the example files provided with TrixiAero.jl are located. If TrixiAero.jl is
-installed as a regular package (with `]add TrixiAero`), these files are read-only and should *not* be
+Return the directory where the example files provided with AeroTrixi.jl are located. If AeroTrixi.jl is
+installed as a regular package (with `]add AeroTrixi`), these files are read-only and should *not* be
 modified. To find out which files are available, use, e.g., `readdir`:
 
 # Examples
@@ -10,4 +10,4 @@ modified. To find out which files are available, use, e.g., `readdir`:
 readdir(examples_dir())
 ```
 """
-examples_dir() = pkgdir(TrixiAero, "examples")
+examples_dir() = pkgdir(AeroTrixi, "examples")

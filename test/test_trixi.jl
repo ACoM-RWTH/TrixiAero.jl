@@ -1,6 +1,6 @@
 using Test: @test, @testset
 using TrixiTest
-using TrixiAero: examples_dir # important for right examples directory in tests
+using AeroTrixi: examples_dir # important for right examples directory in tests
 
 # Stripped down version from Trixi.jl
 

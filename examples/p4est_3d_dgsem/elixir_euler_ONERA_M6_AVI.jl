@@ -1,5 +1,5 @@
 using Trixi
-using TrixiAero
+using AeroTrixi
 using LinearAlgebra: norm
 using Downloads
 
@@ -141,7 +141,7 @@ lift_coefficient = AnalysisSurfaceIntegral(force_boundary_names,
                                                                      u_inf(equations), A))
 
 ###############################################################################
-# TrixiAero additions
+# AeroTrixi additions
 
 p_inf() = 1.0
 pressure_coefficient = AnalysisSurfacePointwise(force_boundary_names,
@@ -150,7 +150,7 @@ pressure_coefficient = AnalysisSurfacePointwise(force_boundary_names,
                                                                            u_inf(equations)))
 
 analysis_interval = 10_000
-analysis_callback = TrixiAero.AnalysisCallback(semi, interval = analysis_interval,
+analysis_callback = AeroTrixi.AnalysisCallback(semi, interval = analysis_interval,
                                                analysis_errors = Symbol[],
                                                analysis_integrals = (lift_coefficient,),
                                                analysis_pointwise = (pressure_coefficient,),
