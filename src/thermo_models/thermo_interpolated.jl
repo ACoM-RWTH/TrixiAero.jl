@@ -419,6 +419,37 @@ end
     return mixture_c_v_integral / rho
 end
 
+ @inline function entropy_c_v_integral_taylor_component(i_comp, index_lower_c, T_b,
+                                                        thermodata::ThermoData1T{LinearInterpolation,
+                                                                                CvO, NCOMP}) where {
+                                                                                                    CvO,
+                                                                                                    NCOMP
+                                                                                                    }
+    @inbounds T_a = equations.T_arr[index_lower]
+    @inbounds T_a_inv = equations.T_arr_inv[index_lower]
+
+    c_v_b = c_v(i, index_lower, fracpos, equations)  # value of c_v at T
+    @inbounds c_v_a = equations.c_v_arr[index_lower, i]  # value of c_v at closest_T
+    # (T_b - T_a)/T_a
+    Δx = T_b * T_a_inv - 1  # (x-1)
+    integrate_part = (c_v_a - (c_v_b - c_v_a) * T_a * equations.inv_ΔT) * (Δx - 0.5 * Δx^2 + Δx^3 / 3) + (c_v_b - c_v_a)
+    
+    @inbounds return equations.int_c_v_over_t_arr[index_lower, i] + integrate_part
+end
+
+# compute ∫ c_v / T dT of flow
+@inline function entropy_c_v_taylor(u, T, rho, thermodata::ThermoData1T)
+    mixture_c_v_integral = 0.0
+
+    _, _, index_lower_c, _ = get_index_lower_fracpos(T, thermodata)
+    @inbounds for i in eachcomponent(thermodata)
+        mixture_c_v_integral += entropy_c_v_integral_taylor_component(i, index_lower_c, T,
+                                                                      thermodata) *
+                                u[i + 3]
+    end
+    return mixture_c_v_integral / rho
+end
+
 # check if energy is too low, return true if it is
 # u is vector of conservative flow variables,
 # rho_inv is 1/rho, e is the internal energy per unit mass
